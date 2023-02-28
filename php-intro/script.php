@@ -4,11 +4,22 @@ $categorias = [];
 $categorias[] = 'infantil';
 $categorias[] = 'adolescente';
 $categorias[] = 'adulto';
-$categorias[] = 'idoso';
 
 $nome = $_POST['$nome']; //ESTE ARQUIVO IRA PEGAR QUALQUER INFORMAÇÃO PARA O POST
 $idade = $_POST['$idade'];
 
+if(empty($nome)){
+    echo 'O nome não pode ser vazio';
+    return;
+}
+if(strlen($nome)<3){
+    echo 'O nome deve ter mais que 3 caracteres';
+    return;
+}
+if(strlen($nome) > 60){
+    echo 'O nome é muito extenso';
+    return;
+}
 //var_dump($nome); //para saber oque vem na variavel
 //var_dump($idade);
 
