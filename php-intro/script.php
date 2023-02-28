@@ -20,6 +20,10 @@ if(strlen($nome) > 60){
     echo 'O nome é muito extenso';
     return;
 }
+if(!is_numeric($idade)){
+    echo 'Informe um número para a idade';
+    return;
+}
 //var_dump($nome); //para saber oque vem na variavel
 //var_dump($idade);
 
