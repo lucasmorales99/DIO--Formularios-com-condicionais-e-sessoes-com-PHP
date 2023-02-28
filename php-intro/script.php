@@ -6,8 +6,11 @@ $categorias[] = 'adolescente';
 $categorias[] = 'adulto';
 $categorias[] = 'idoso';
 
-$nome = 'Eduardo';
-$idade = 8;
+$nome = $_POST['$nome']; //ESTE ARQUIVO IRA PEGAR QUALQUER INFORMAÇÃO PARA O POST
+$idade = $_POST['$idade'];
+
+//var_dump($nome); //para saber oque vem na variavel
+//var_dump($idade);
 
 if($idade >= 0 && idade<= 12)
 {
