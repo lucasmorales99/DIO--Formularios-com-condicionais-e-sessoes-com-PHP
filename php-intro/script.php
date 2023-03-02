@@ -1,4 +1,7 @@
 <?php
+/** Created by Lucas Morales */
+
+session_start();
 
 $categorias = [];
 $categorias[] = 'infantil';
@@ -9,19 +12,23 @@ $nome = $_POST['$nome']; //ESTE ARQUIVO IRA PEGAR QUALQUER INFORMAÇÃO PARA O P
 $idade = $_POST['$idade'];
 
 if(empty($nome)){
-    echo 'O nome não pode ser vazio';
+    $_SESSION['mensagem-de-erro'] = 'O nome não pode ser vazio';
+    header(string 'location: index.php');
     return;
 }
 if(strlen($nome)<3){
-    echo 'O nome deve ter mais que 3 caracteres';
+    $_SESSION['mensagem-de-erro'] = 'O nome deve ter mais que 3 caracteres';
+    header(string 'location: index.php');
     return;
 }
 if(strlen($nome) > 60){
-    echo 'O nome é muito extenso';
+    $_SESSION['mensagem-de-erro'] = 'O nome é muito extenso';
+    header(string 'location: index.php');
     return;
 }
 if(!is_numeric($idade)){
-    echo 'Informe um número para a idade';
+    $_SESSION['mensagem-de-erro'] = 'Informe um número para a idade';
+    header(string 'location: index.php');
     return;
 }
 //var_dump($nome); //para saber oque vem na variavel
